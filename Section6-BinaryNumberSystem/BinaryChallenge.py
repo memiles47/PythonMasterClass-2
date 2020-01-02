@@ -22,3 +22,5 @@ __author__ = 'Michael E Miles'
 
 # Once the program is working, modify it to print octal rather than binary.
 
+decimal = int(input("Please enter a number between 0 ant 65535: "))
+print(decimal)

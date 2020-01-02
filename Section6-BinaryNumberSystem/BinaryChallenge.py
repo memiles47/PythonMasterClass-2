@@ -22,5 +22,28 @@ __author__ = 'Michael E Miles'
 
 # Once the program is working, modify it to print octal rather than binary.
 
-decimal = int(input("Please enter a number between 0 ant 65535: "))
-print(decimal)
+binary = ""
+checkedInput = ""
+
+userInput = input("Please enter an integer between 0 and 65535: ")
+if userInput != '':
+    # print(type(userInput))
+    for i in range(len(userInput)):
+        if not userInput[i].isdigit():
+            print("Your input was not an integer")
+            break
+            # continue
+        else:
+            checkedInput += userInput[i]
+            # print("Your input was not an integer")
+            # break
+            continue
+    else:
+        decimal = int(checkedInput)
+        print(type(userInput))
+        print(type(checkedInput))
+        print(type(decimal))
+        print(decimal)
+
+# if 0 <= decimal < 65536:
+#     print(decimal)

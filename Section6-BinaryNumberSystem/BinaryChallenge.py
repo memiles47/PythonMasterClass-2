@@ -25,25 +25,26 @@ __author__ = 'Michael E Miles'
 binary = ""
 checkedInput = ""
 
-userInput = input("Please enter an integer between 0 and 65535: ")
-if userInput != '':
-    # print(type(userInput))
-    for i in range(len(userInput)):
-        if not userInput[i].isdigit():
-            print("Your input was not an integer")
-            break
-            # continue
-        else:
-            checkedInput += userInput[i]
-            # print("Your input was not an integer")
-            # break
-            continue
-    else:
-        decimal = int(checkedInput)
-        print(type(userInput))
-        print(type(checkedInput))
-        print(type(decimal))
-        print(decimal)
 
-# if 0 <= decimal < 65536:
-#     print(decimal)
+def verify(item):
+    if item != "":
+        for char in item:
+            if not char.isdigit():
+                return False
+            else:
+                continue
+        else:
+            if not 0 <= int(item) < 65536:
+                return False
+            else:
+                return True
+    else:
+        return False
+
+
+userInput = input("Please enter a positive integer between 0 and 65535: ")
+if not verify(userInput):
+    print("Invalid Input")
+else:
+    decimal = int(userInput)
+    print(decimal)

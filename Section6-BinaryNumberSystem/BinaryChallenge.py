@@ -23,7 +23,6 @@ __author__ = 'Michael E Miles'
 # Once the program is working, modify it to print octal rather than binary.
 
 binary = ""
-checkedInput = ""
 
 
 def verify(item):
@@ -47,11 +46,11 @@ if not verify(userInput):
     print("Invalid Input")
 else:
     decimal = int(userInput)
-    for bit in range(15, 0, -1):
-        if 2 ** bit <= decimal:
-            binary += "1"
-            decimal %= 2 ** bit
-        else:
-            binary += "0"
-    binary += str(int(userInput) % 2)
+    for bit in range(15, -1, -1):
+        binary += str(decimal // 2 ** bit)
+        decimal %= 2 ** bit
+    binary = binary.lstrip('0')
+    if binary == '':
+        binary += "0"
+
 print(binary)

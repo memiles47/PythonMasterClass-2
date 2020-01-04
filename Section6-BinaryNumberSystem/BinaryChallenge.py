@@ -47,3 +47,11 @@ if not verify(userInput):
     print("Invalid Input")
 else:
     decimal = int(userInput)
+    for bit in range(15, 0, -1):
+        if 2 ** bit <= decimal:
+            binary += "1"
+            decimal %= 2 ** bit
+        else:
+            binary += "0"
+    binary += str(int(userInput) % 2)
+print(binary)

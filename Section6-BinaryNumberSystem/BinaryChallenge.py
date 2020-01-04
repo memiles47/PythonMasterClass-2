@@ -47,4 +47,3 @@ if not verify(userInput):
     print("Invalid Input")
 else:
     decimal = int(userInput)
-    print(decimal)

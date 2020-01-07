@@ -42,4 +42,10 @@ for val in fruit.values():
     print(val)
 print("*" * 40)
 
+fruitKeys = fruit.keys()
+print(fruitKeys)
+
+fruit["tomato"] = "not nice with ice cream"
+print(fruitKeys)
+
 
